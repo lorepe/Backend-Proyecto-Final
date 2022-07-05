@@ -1,37 +1,37 @@
-[2022-06-2811:06:17] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2811:06:17] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
 [2022-06-2811:21:11] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint ["PRIMARY KEY ON PUBLIC.PACIENTES(ID) ( /* key:0 */ 1, 'Modificado2', 'Modificado2', '444', TIMESTAMP '2022-06-13 00:00:00', 1)"; SQL statement:
 insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?, ?, ?) [23505-212]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
 [2022-06-2811:25:07] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint ["PRIMARY KEY ON PUBLIC.PACIENTES(ID) ( /* key:0 */ 1, 'Modificado2', 'Modificado2', '444', TIMESTAMP '2022-06-13 00:00:00', 1)"; SQL statement:
 insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?, ?, ?) [23505-212]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
-[2022-06-2811:26:06] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2811:26:06] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2811:55:32] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2811:55:32] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2811:55:42] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2811:55:42] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:09:48] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:09:48] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:09:54] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:09:54] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:10:26] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:10:26] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:10:51] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:10:51] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:14:05] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:14:05] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:20:34] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:20:34] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:20:39] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:20:39] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
-[2022-06-2812:28:54] [ ERROR] [GlobalExceptionHandler:16] Required request body is missing: public org.springframework.http.ResponseEntity<?> com.dh.odontologia.controller.PacienteController.crearPaceinte(com.dh.odontologia.model.PacienteDTO)
-[2022-06-2812:30:15] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
+[2022-06-2812:28:54] [ ERROR] [GlobalExceptionHandler:16] Required request body is missing: public org.springframework.http.ResponseEntity<?> com.dh.odontologia.controller.PacienteController.crearPaceinte(com.dh.odontologia.model.dto.PacienteDTO)
+[2022-06-2812:30:15] [ ERROR] [GlobalExceptionHandler:16] Cannot deserialize value of type `com.dh.odontologia.model.dto.PacienteDTO` from Array value (token `JsonToken.START_ARRAY`)
  at [Source: UNKNOWN; byte offset: #UNKNOWN]
 [2022-06-2812:55:09] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Cannot deserialize value of type `java.util.Date` from String "28-06-2022": not a valid representation (error: Failed to parse Date value '28-06-2022': Cannot parse date "28-06-2022": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "28-06-2022": not a valid representation (error: Failed to parse Date value '28-06-2022': Cannot parse date "28-06-2022": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
- at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 5, column: 20] (through reference chain: com.dh.odontologia.model.PacienteDTO["fechaIngreso"])
-[2022-06-2912:01:16] [ INFO ] [OdontologoController:22] Se el odontologo: com.dh.odontologia.model.OdontologoDTO@7f774b3a
-[2022-06-2912:03:11] [ INFO ] [OdontologoController:22] Se el odontologo: com.dh.odontologia.model.OdontologoDTO@1479b1b3
-[2022-06-2912:04:19] [ INFO ] [OdontologoController:22] Se creo el odontologo: com.dh.odontologia.model.OdontologoDTO@cf88e7b
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 5, column: 20] (through reference chain: com.dh.odontologia.model.dto.PacienteDTO["fechaIngreso"])
+[2022-06-2912:01:16] [ INFO ] [OdontologoController:22] Se el odontologo: com.dh.odontologia.model.dto.OdontologoDTO@7f774b3a
+[2022-06-2912:03:11] [ INFO ] [OdontologoController:22] Se el odontologo: com.dh.odontologia.model.dto.OdontologoDTO@1479b1b3
+[2022-06-2912:04:19] [ INFO ] [OdontologoController:22] Se creo el odontologo: com.dh.odontologia.model.dto.OdontologoDTO@cf88e7b
 [2022-06-2912:05:26] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
 [2022-07-0220:12:44] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
 [2022-07-0221:14:11] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
@@ -45,16 +45,18 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
 [2022-07-0409:41:43] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
 [2022-07-0409:42:10] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint [FKQTJ6T7MULC2JMFKV92X4CTKWH]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
 [2022-07-0409:42:35] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint [FKQTJ6T7MULC2JMFKV92X4CTKWH]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
-[2022-07-0409:44:29] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.TurnoDTO@6fdc7f1f
-[2022-07-0409:44:29] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.TurnoDTO@6fdc7f1f
-[2022-07-0409:45:23] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.TurnoDTO@56810d08
-[2022-07-0409:45:23] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.TurnoDTO@56810d08
+[2022-07-0409:44:29] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@6fdc7f1f
+[2022-07-0409:44:29] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@6fdc7f1f
+[2022-07-0409:45:23] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@56810d08
+[2022-07-0409:45:23] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@56810d08
 [2022-07-0409:52:07] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint [FKQTJ6T7MULC2JMFKV92X4CTKWH]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
 [2022-07-0409:52:15] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
-[2022-07-0409:52:36] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.TurnoDTO@85faa2b
-[2022-07-0409:52:36] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.TurnoDTO@85faa2b
+[2022-07-0409:52:36] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@85faa2b
+[2022-07-0409:52:36] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@85faa2b
 [2022-07-0410:14:34] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
 [2022-07-0410:15:11] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
-[2022-07-0410:15:45] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.TurnoDTO@9364977
-[2022-07-0410:15:45] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.TurnoDTO@9364977
+[2022-07-0410:15:45] [ INFO ] [TurnoController:22] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@9364977
+[2022-07-0410:15:45] [ DEBUG] [TurnoController:23] Se crea un turno: com.dh.odontologia.model.dto.TurnoDTO@9364977
 [2022-07-0410:36:37] [ INFO ] [OdontologoController:22] Se creo el odontologo: OdontologoDTO{id=null, nombre='lore', apellido='apellido', matricula=10123458}
+[2022-07-0513:06:11] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Cannot deserialize value of type `java.util.Date` from String "/01/02/2022": not a valid representation (error: Failed to parse Date value '/01/02/2022': Cannot parse date "/01/02/2022": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd")); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.util.Date` from String "/01/02/2022": not a valid representation (error: Failed to parse Date value '/01/02/2022': Cannot parse date "/01/02/2022": not compatible with any of standard forms ("yyyy-MM-dd'T'HH:mm:ss.SSSX", "yyyy-MM-dd'T'HH:mm:ss.SSS", "EEE, dd MMM yyyy HH:mm:ss zzz", "yyyy-MM-dd"))
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 5, column: 21] (through reference chain: com.dh.odontologia.model.dto.PacienteDTO["fechaIngreso"])

@@ -1,7 +1,7 @@
 package com.dh.odontologia.service;
 
 import org.junit.*;
-import com.dh.odontologia.model.OdontologoDTO;
+import com.dh.odontologia.model.dto.OdontologoDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

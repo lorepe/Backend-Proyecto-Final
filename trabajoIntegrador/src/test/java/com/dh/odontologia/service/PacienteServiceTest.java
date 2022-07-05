@@ -1,17 +1,13 @@
 package com.dh.odontologia.service;
 
 import com.dh.odontologia.model.Domicilio;
-import com.dh.odontologia.model.OdontologoDTO;
-import com.dh.odontologia.model.Paciente;
-import com.dh.odontologia.model.PacienteDTO;
+import com.dh.odontologia.model.dto.PacienteDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.Date;
-import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class PacienteServiceTest {
     @Autowired

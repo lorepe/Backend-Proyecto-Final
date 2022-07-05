@@ -1,4 +1,6 @@
-package com.dh.odontologia.model;
+package com.dh.odontologia.model.dto;
+
+import com.dh.odontologia.model.Domicilio;
 
 import java.util.Date;
 

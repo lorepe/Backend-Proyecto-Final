@@ -1,6 +1,6 @@
 package com.dh.odontologia.controller;
 
-import com.dh.odontologia.model.PacienteDTO;
+import com.dh.odontologia.model.dto.PacienteDTO;
 import com.dh.odontologia.service.IDomicilioService;
 import com.dh.odontologia.service.IPacienteService;
 import org.apache.log4j.Logger;

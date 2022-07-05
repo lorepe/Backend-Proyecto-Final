@@ -1,9 +1,7 @@
 package com.dh.odontologia.service;
 
-import com.dh.odontologia.model.OdontologoDTO;
-import com.dh.odontologia.model.PacienteDTO;
+import com.dh.odontologia.model.dto.PacienteDTO;
 import java.util.Collection;
-import java.util.Set;
 
 public interface IPacienteService {
     void crearPaciente(PacienteDTO pacienteDTO);

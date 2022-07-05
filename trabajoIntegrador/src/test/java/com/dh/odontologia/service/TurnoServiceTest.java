@@ -1,6 +1,9 @@
 package com.dh.odontologia.service;
 
 import com.dh.odontologia.model.*;
+import com.dh.odontologia.model.dto.OdontologoDTO;
+import com.dh.odontologia.model.dto.PacienteDTO;
+import com.dh.odontologia.model.dto.TurnoDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

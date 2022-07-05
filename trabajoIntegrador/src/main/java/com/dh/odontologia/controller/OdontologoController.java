@@ -1,7 +1,7 @@
 package com.dh.odontologia.controller;
 
 import com.dh.odontologia.exceptions.BadRequestException;
-import com.dh.odontologia.model.OdontologoDTO;
+import com.dh.odontologia.model.dto.OdontologoDTO;
 import com.dh.odontologia.service.IOdontologoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

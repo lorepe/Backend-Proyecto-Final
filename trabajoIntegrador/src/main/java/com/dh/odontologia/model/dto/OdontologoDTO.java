@@ -1,4 +1,4 @@
-package com.dh.odontologia.model;
+package com.dh.odontologia.model.dto;
 
 public class OdontologoDTO {
     private Long id;

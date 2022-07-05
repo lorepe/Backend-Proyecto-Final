@@ -1,6 +1,6 @@
 package com.dh.odontologia.controller;
 
-import com.dh.odontologia.model.TurnoDTO;
+import com.dh.odontologia.model.dto.TurnoDTO;
 import com.dh.odontologia.service.ITurnoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
