@@ -3,15 +3,22 @@ package com.dh.odontologia.service;
 import com.dh.odontologia.model.Domicilio;
 import com.dh.odontologia.model.dto.PacienteDTO;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Date;
-
+/*
+@RunWith(SpringRunner.class)
+@SpringBootTest
+@AutoConfigureMockMvc(addFilters = false)
+* */
 @SpringBootTest
 class PacienteServiceTest {
     @Autowired
-    private IPacienteService pacienteService;
+    private PacienteService pacienteService;
     @Test
     public void testCrearPaciente(){
         Date fecha = new Date();

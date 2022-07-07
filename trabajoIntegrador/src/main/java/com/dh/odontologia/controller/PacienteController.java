@@ -1,5 +1,7 @@
 package com.dh.odontologia.controller;
 
+import com.dh.odontologia.exceptions.BadRequestException;
+import com.dh.odontologia.exceptions.ResourceNotFoundExceptions;
 import com.dh.odontologia.model.dto.PacienteDTO;
 import com.dh.odontologia.service.IDomicilioService;
 import com.dh.odontologia.service.IPacienteService;
@@ -8,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.request.WebRequest;
 
 import java.util.Collection;
 
@@ -20,11 +23,25 @@ public class PacienteController {
     IPacienteService pacienteService;
     @Autowired
     IDomicilioService domicilioService;
+
+    @ExceptionHandler(ResourceNotFoundExceptions.class)
+    private ResponseEntity<?> exception(ResourceNotFoundExceptions ex, WebRequest request){
+        logger.error(ex);
+        return new ResponseEntity<>("Error manejado por Resource",HttpStatus.NOT_FOUND);
+    }
+
+
     @PostMapping
-    public ResponseEntity<?> crearPaceinte(@RequestBody PacienteDTO pacienteDTO){
-        domicilioService.crearDomicilio(pacienteDTO.getDomicilio());
-        pacienteService.crearPaciente(pacienteDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<?> crearPaciente(@RequestBody PacienteDTO pacienteDTO) throws BadRequestException {
+        if (pacienteDTO!= null){
+            domicilioService.crearDomicilio(pacienteDTO.getDomicilio());
+            pacienteService.crearPaciente(pacienteDTO);
+        }else{
+            String mensajeError= "Ingrese un paciente";
+            throw new BadRequestException(mensajeError);
+        }
+
+        return  ResponseEntity.ok(HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -33,14 +50,15 @@ public class PacienteController {
     }
 
     @PutMapping
-    public ResponseEntity<?> modificarPaciente(@RequestBody PacienteDTO pacienteDTO){
+    public ResponseEntity<?> modificarPaciente(@RequestBody PacienteDTO pacienteDTO) throws ResourceNotFoundExceptions {
         pacienteService.modificarPaciente(pacienteDTO);
         return ResponseEntity.ok(HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarPaciente( @PathVariable Long id ){
+    public ResponseEntity<?> eliminarPaciente( @PathVariable Long id )throws ResourceNotFoundExceptions{
+
         pacienteService.eliminarPaciente(id);
-        return ResponseEntity.ok(HttpStatus.OK);
+        return ResponseEntity.ok("Eliminado");
     }
     @GetMapping
     public Collection<PacienteDTO> getTodosPacientes(){

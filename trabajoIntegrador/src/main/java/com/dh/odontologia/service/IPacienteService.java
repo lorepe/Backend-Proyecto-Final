@@ -1,13 +1,14 @@
 package com.dh.odontologia.service;
 
+import com.dh.odontologia.exceptions.ResourceNotFoundExceptions;
 import com.dh.odontologia.model.dto.PacienteDTO;
 import java.util.Collection;
 
 public interface IPacienteService {
-    void crearPaciente(PacienteDTO pacienteDTO);
+    PacienteDTO crearPaciente(PacienteDTO pacienteDTO);
     PacienteDTO leerPaciente(Long id);
-    void modificarPaciente(PacienteDTO pacienteDTO);
-    void eliminarPaciente(Long id);
+    void modificarPaciente(PacienteDTO pacienteDTO) throws ResourceNotFoundExceptions;
+    void eliminarPaciente(Long id) throws ResourceNotFoundExceptions;
     Collection<PacienteDTO> listarPacientes();
 
     //Set<PacienteDTO> getPacientesByApellidoLike(String apellido);
