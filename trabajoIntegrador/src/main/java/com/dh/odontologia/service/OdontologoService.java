@@ -19,9 +19,9 @@ public class OdontologoService implements IOdontologoService {
     @Autowired
     ObjectMapper mapper;
 
-    private void guardarOdontologo(Odontologo odontologo){
+    private Odontologo guardarOdontologo(Odontologo odontologo){
       //  Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
-        odontologoRepository.save(odontologo);
+        return odontologoRepository.save(odontologo);
     }
     @Override
     public Odontologo crearOdontologo(Odontologo odontologo) {
@@ -40,8 +40,8 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public void modificarOdontologo(Odontologo odontologo) {
-        guardarOdontologo(odontologo);
+    public Odontologo modificarOdontologo(Odontologo odontologo) {
+        return guardarOdontologo(odontologo);
 
     }
 

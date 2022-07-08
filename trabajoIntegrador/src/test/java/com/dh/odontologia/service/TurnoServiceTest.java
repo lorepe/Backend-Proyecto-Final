@@ -4,6 +4,7 @@ import com.dh.odontologia.model.*;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,51 +13,52 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
-
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.Date;
 
 @SpringBootTest
 class TurnoServiceTest {
     @Autowired
-    private ITurnoService turnoService;
+    private IPacienteService pacienteService;
+    private Paciente paciente;
+
     @Autowired
     private IOdontologoService odontologoService;
+    private Odontologo odontologo;
+    private Domicilio domicilio;
     @Autowired
-    private IPacienteService pacienteService;
+    private ITurnoService turnoService;
+    @BeforeEach
+    public void cargaDataSet() {
+        paciente = new Paciente();
+        paciente.setNombre("Pepe");
+        paciente.setApellido("Pepardo");
+        paciente.setDni("123456789");
+        domicilio = new Domicilio();
+        domicilio.setCalle("Calle Falsa");
+        domicilio.setNumero("123");
+        domicilio.setLocalidad("Springfield");
+        domicilio.setProvincia("Springfield");
+        paciente.setDomicilio(domicilio);
+
+        odontologo = new Odontologo();
+        odontologo.setNombre("Pepo");
+        odontologo.setApellido("Pepardo");
+        odontologo.setMatricula(123456);
+    }
 
     @Test
-    public void testCrearTurno(){
+    public void test01CrearTurnoConPacienteYOdontologoExistente() {
+
+        Paciente pacienteCreado = pacienteService.crearPaciente(paciente);
+        Odontologo odontologoCreado = odontologoService.crearOdontologo(odontologo);
         Turno turno = new Turno();
-
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Odontologo");
-        odontologo.setApellido("Apellido odont");
-        odontologo.setMatricula(11111);
-        odontologoService.crearOdontologo(odontologo);
-         turno.setOdontologo(odontologo);
-
-        Paciente paciente = new Paciente();
-        paciente.setNombre("Paciente");
-        paciente.setApellido("Apellido paciente ");
-        paciente.setDomicilio(new Domicilio("137A","103F","Suba","Bogota"));
-        Date fecha1 = new Date();
-        paciente.setFechaIngreso(fecha1);
-        pacienteService.crearPaciente(paciente);
-        turno.setPaciente(paciente);
-
-        Date fecha = new Date();
-        turno.setFecha(fecha);
-        turnoService.crearTurno(turno);
-
-        Paciente pacienteMilena = pacienteService.leerPaciente(1L);
-        Odontologo odontologoGloria = odontologoService.leerOdontologo(1L);
-        Turno turnoRecibido = turnoService.leerTurno(1L);
-        Assert.assertTrue(turnoRecibido != null );
-        Assert.assertTrue(pacienteMilena != null );
-        Assert.assertTrue(odontologoGloria != null );
-
-
-
+        Date date = new Date();
+        turno.setFecha(date);
+        turno.setPaciente(pacienteCreado);
+        turno.setOdontologo(odontologoCreado);
+        Turno turnoCreado = turnoService.crearTurno(turno);
+        assertNotNull(turnoService.leerTurno(turnoCreado.getId()));
     }
 
    /*public void cargarDataSet() {

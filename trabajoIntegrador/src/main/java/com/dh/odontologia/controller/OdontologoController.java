@@ -5,7 +5,6 @@ import com.dh.odontologia.model.Odontologo;
 import com.dh.odontologia.service.IOdontologoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -41,6 +40,7 @@ public class OdontologoController {
     }
     @GetMapping
     public Collection<Odontologo> getTodosOdontologos(){
+        logger.info("Se estan listando los odontologos");
         return odontologoService.listarOdontologos();
     }
 }

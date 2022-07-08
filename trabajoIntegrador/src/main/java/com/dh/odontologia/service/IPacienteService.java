@@ -7,7 +7,7 @@ import java.util.Collection;
 public interface IPacienteService {
     Paciente crearPaciente(Paciente paciente);
     Paciente leerPaciente(Long id);
-    void modificarPaciente(Paciente paciente) throws ResourceNotFoundExceptions;
+    Paciente modificarPaciente(Paciente paciente) throws ResourceNotFoundExceptions;
     void eliminarPaciente(Long id) throws ResourceNotFoundExceptions;
     Collection<Paciente> listarPacientes();
 

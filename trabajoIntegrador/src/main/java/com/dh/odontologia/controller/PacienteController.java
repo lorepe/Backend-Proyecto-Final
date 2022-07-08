@@ -37,8 +37,8 @@ public class PacienteController {
             domicilioService.crearDomicilio(paciente.getDomicilio());
             pacienteService.crearPaciente(paciente);
         }else{
-            String mensajeError= "Ingrese un paciente";
-            throw new BadRequestException(mensajeError);
+
+            throw new BadRequestException("Ingrese un paciente");
         }
 
         return  ResponseEntity.ok("Paciente ("+paciente+ ") creado");

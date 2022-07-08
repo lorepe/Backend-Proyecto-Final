@@ -19,8 +19,8 @@ public class PacienteService implements IPacienteService {
 
     @Override
     public Paciente crearPaciente(Paciente paciente) {
-        guardarPaciente(paciente);
-        return paciente;
+
+        return guardarPaciente(paciente);
     }
 
     @Override
@@ -33,15 +33,15 @@ public class PacienteService implements IPacienteService {
         return pacienteOp;
     }
     private  Paciente guardarPaciente(Paciente paciente){
-        //Paciente paciente = mapper.convertValue(paciente,Paciente.class);
-        return pacienteRepository.save(paciente);
+        Paciente paciente1 = mapper.convertValue(paciente,Paciente.class);
+        return pacienteRepository.save(paciente1);
     }
 
     @Override
-    public void modificarPaciente(Paciente paciente) throws ResourceNotFoundExceptions {
+    public Paciente modificarPaciente(Paciente paciente) throws ResourceNotFoundExceptions {
        if (leerPaciente(paciente.getId())==null)
            throw new ResourceNotFoundExceptions("No existe un paciente con el id"+ paciente.getId());
-        guardarPaciente(paciente);
+        return  guardarPaciente(paciente);
     }
 
     @Override

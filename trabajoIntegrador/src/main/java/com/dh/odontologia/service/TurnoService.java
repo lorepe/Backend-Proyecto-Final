@@ -18,13 +18,13 @@ public class TurnoService implements ITurnoService{
     @Autowired
     ObjectMapper mapper;
 
-    private void guardarTurno(Turno turno){
+    private Turno guardarTurno(Turno turno){
         //Turno turno = mapper.convertValue(turno, Turno.class);
-        turnoRepository.save(turno);
+        return turnoRepository.save(turno);
     }
     @Override
-    public void crearTurno(Turno turno) {
-        guardarTurno(turno);
+    public Turno crearTurno(Turno turno) {
+       return guardarTurno(turno);
     }
 
     @Override

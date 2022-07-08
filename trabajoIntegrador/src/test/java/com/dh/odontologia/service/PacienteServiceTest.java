@@ -16,6 +16,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /*
@@ -84,7 +85,7 @@ class PacienteServiceTest {
         Paciente p = pacienteService.crearPaciente(paciente);
         Paciente original = pacienteService.leerPaciente(p.getId());
         p.setNombre("Pepito");
-        pacienteService.modificarPaciente(p);
+        Paciente actualizado=pacienteService.modificarPaciente(p);
         assertNotEquals(actualizado, original);
 
 
