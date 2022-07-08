@@ -1,7 +1,6 @@
 package com.dh.odontologia.service;
 
 import com.dh.odontologia.model.Turno;
-import com.dh.odontologia.model.dto.TurnoDTO;
 import com.dh.odontologia.repository.ITurnoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,28 +18,28 @@ public class TurnoService implements ITurnoService{
     @Autowired
     ObjectMapper mapper;
 
-    private void guardarTurno(TurnoDTO turnoDTO){
-        Turno turno = mapper.convertValue(turnoDTO, Turno.class);
+    private void guardarTurno(Turno turno){
+        //Turno turno = mapper.convertValue(turno, Turno.class);
         turnoRepository.save(turno);
     }
     @Override
-    public void crearTurno(TurnoDTO turnoDTO) {
-        guardarTurno(turnoDTO);
+    public void crearTurno(Turno turno) {
+        guardarTurno(turno);
     }
 
     @Override
-    public TurnoDTO leerTurno(Long id) {
+    public Turno leerTurno(Long id) {
         Optional<Turno> turno = turnoRepository.findById(id);
-        TurnoDTO turnoDTO = null;
+        Turno turnoOp = null;
         if (turno.isPresent()){
-            turnoDTO = mapper.convertValue(turno,TurnoDTO.class);
+            turnoOp = mapper.convertValue(turno,Turno.class);
         }
-        return turnoDTO;
+        return turnoOp;
     }
 
     @Override
-    public void modificarTurno(TurnoDTO turnoDTO) {
-        guardarTurno(turnoDTO);
+    public void modificarTurno(Turno turno) {
+        guardarTurno(turno);
     }
 
     @Override
@@ -49,12 +48,12 @@ public class TurnoService implements ITurnoService{
     }
 
     @Override
-    public Set<TurnoDTO> listarTurnos() {
+    public Set<Turno> listarTurnos() {
         List<Turno> turnos =turnoRepository.findAll();
-        Set<TurnoDTO> turnosDTO = new HashSet<>();
+        Set<Turno> turnosSet = new HashSet<>();
         for (Turno turno: turnos) {
-            turnosDTO.add(mapper.convertValue(turno,TurnoDTO.class));
+            turnosSet.add(mapper.convertValue(turno,Turno.class));
         }
-        return turnosDTO;
+        return turnosSet;
     }
 }

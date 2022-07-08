@@ -1,7 +1,7 @@
 package com.dh.odontologia.service;
 
 import com.dh.odontologia.model.Odontologo;
-import com.dh.odontologia.model.dto.OdontologoDTO;
+
 import com.dh.odontologia.repository.IOdontologoRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,29 +19,29 @@ public class OdontologoService implements IOdontologoService {
     @Autowired
     ObjectMapper mapper;
 
-    private void guardarOdontologo(OdontologoDTO odontologoDTO){
-        Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
+    private void guardarOdontologo(Odontologo odontologo){
+      //  Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
         odontologoRepository.save(odontologo);
     }
     @Override
-    public OdontologoDTO crearOdontologo(OdontologoDTO odontologoDTO) {
-        guardarOdontologo(odontologoDTO);
-        return odontologoDTO;
+    public Odontologo crearOdontologo(Odontologo odontologo) {
+        guardarOdontologo(odontologo);
+        return odontologo;
     }
 
     @Override
-    public OdontologoDTO leerOdontologo(Long id) {
+    public Odontologo leerOdontologo(Long id) {
         Optional<Odontologo> odontologo = odontologoRepository.findById(id);
-        OdontologoDTO odontologoDTO = null;
+        Odontologo odontologoOp = null;
         if (odontologo.isPresent()){
-            odontologoDTO= mapper.convertValue(odontologo,OdontologoDTO.class);
+            odontologoOp= mapper.convertValue(odontologo,Odontologo.class);
         }
-        return odontologoDTO;
+        return odontologoOp;
     }
 
     @Override
-    public void modificarOdontologo(OdontologoDTO odontologoDTO) {
-        guardarOdontologo(odontologoDTO);
+    public void modificarOdontologo(Odontologo odontologo) {
+        guardarOdontologo(odontologo);
 
     }
 
@@ -51,13 +51,13 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public Set<OdontologoDTO> listarOdontologos() {
+    public Set<Odontologo> listarOdontologos() {
         List<Odontologo> odontologos =odontologoRepository.findAll();
-        Set<OdontologoDTO> odontologosDTO = new HashSet<>();
+        Set<Odontologo> odontologosSet = new HashSet<>();
         for (Odontologo odontologo: odontologos) {
-            odontologosDTO.add(mapper.convertValue(odontologo,OdontologoDTO.class));
+            odontologosSet.add(mapper.convertValue(odontologo,Odontologo.class));
         }
-        return odontologosDTO;
+        return odontologosSet;
     }
 
    /* @Override

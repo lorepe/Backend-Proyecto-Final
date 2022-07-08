@@ -3,7 +3,6 @@ package com.dh.odontologia.service;
 
 import com.dh.odontologia.exceptions.ResourceNotFoundExceptions;
 import com.dh.odontologia.model.Paciente;
-import com.dh.odontologia.model.dto.PacienteDTO;
 import com.dh.odontologia.repository.IPacienteRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,30 +18,30 @@ public class PacienteService implements IPacienteService {
     ObjectMapper mapper;
 
     @Override
-    public PacienteDTO crearPaciente(PacienteDTO pacienteDTO) {
-        guardarPaciente(pacienteDTO);
-        return pacienteDTO;
+    public Paciente crearPaciente(Paciente paciente) {
+        guardarPaciente(paciente);
+        return paciente;
     }
 
     @Override
-    public PacienteDTO leerPaciente(Long id) {
+    public Paciente leerPaciente(Long id) {
         Optional<Paciente> paciente = pacienteRepository.findById(id);
-        PacienteDTO pacienteDTO = null;
+        Paciente pacienteOp = null;
         if (paciente.isPresent()){
-            pacienteDTO = mapper.convertValue(paciente,PacienteDTO.class);
+            pacienteOp = mapper.convertValue(paciente,Paciente.class);
         }
-        return pacienteDTO;
+        return pacienteOp;
     }
-    private  Paciente guardarPaciente(PacienteDTO pacienteDTO){
-        Paciente paciente = mapper.convertValue(pacienteDTO,Paciente.class);
+    private  Paciente guardarPaciente(Paciente paciente){
+        //Paciente paciente = mapper.convertValue(paciente,Paciente.class);
         return pacienteRepository.save(paciente);
     }
 
     @Override
-    public void modificarPaciente(PacienteDTO pacienteDTO) throws ResourceNotFoundExceptions {
-       if (leerPaciente(pacienteDTO.getId())==null)
-           throw new ResourceNotFoundExceptions("No existe un paciente con el id"+ pacienteDTO.getId());
-        guardarPaciente(pacienteDTO);
+    public void modificarPaciente(Paciente paciente) throws ResourceNotFoundExceptions {
+       if (leerPaciente(paciente.getId())==null)
+           throw new ResourceNotFoundExceptions("No existe un paciente con el id"+ paciente.getId());
+        guardarPaciente(paciente);
     }
 
     @Override
@@ -54,12 +53,12 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public Collection<PacienteDTO> listarPacientes() {
+    public Collection<Paciente> listarPacientes() {
 
         List<Paciente> pacientes =pacienteRepository.findAll();
-        Set<PacienteDTO> pacientesDTO = new HashSet<PacienteDTO>();
+        Set<Paciente> pacientesDTO = new HashSet<Paciente>();
         for (Paciente paciente: pacientes) {
-            pacientesDTO.add(mapper.convertValue(paciente,PacienteDTO.class));
+            pacientesDTO.add(mapper.convertValue(paciente,Paciente.class));
         }
 
         return pacientesDTO;

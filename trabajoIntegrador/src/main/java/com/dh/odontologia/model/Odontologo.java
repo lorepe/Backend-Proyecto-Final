@@ -15,9 +15,8 @@ public class Odontologo {
     private String nombre;
     private String apellido;
     private Integer matricula;
-    /*@OneToMany(mappedBy="odontologo")
-    @JsonIgnore*/
     @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<Turno> turnos = new HashSet<>();
     public Odontologo() {
     }
@@ -31,10 +30,6 @@ public class Odontologo {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -59,5 +54,24 @@ public class Odontologo {
 
     public void setMatricula(Integer matricula) {
         this.matricula = matricula;
+    }
+
+    public Set<Turno> getTurnos() {
+        return turnos;
+    }
+
+    public void setTurnos(Set<Turno> turnos) {
+        this.turnos = turnos;
+    }
+
+    @Override
+    public String toString() {
+        return "Odontologo{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", matricula=" + matricula +
+                ", turnos=" + turnos +
+                '}';
     }
 }

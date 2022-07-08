@@ -1,7 +1,7 @@
 package com.dh.odontologia.service;
 
+import com.dh.odontologia.model.Odontologo;
 import org.junit.*;
-import com.dh.odontologia.model.dto.OdontologoDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,46 +14,47 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 class OdontologoServiceTest {
     @Autowired
-    private OdontologoService odontologoService;
+    private IOdontologoService odontologoService;
     @Test
     public void testCrearOdontologo(){
-        OdontologoDTO odontologoDTO = new OdontologoDTO();
-        odontologoDTO.setNombre("Gloria");
-        odontologoDTO.setApellido("Escobar Ruiz");
-        odontologoDTO.setMatricula(60001);
+        Odontologo odontologo= new Odontologo();
+        odontologo.setNombre("Gloria");
+        odontologo.setApellido("Escobar Ruiz");
+        odontologo.setMatricula(60001);
 
-
-        OdontologoDTO odontologoGloria = odontologoService.leerOdontologo(1L);
-        assertTrue(odontologoGloria!= null);
+        odontologoService.crearOdontologo(odontologo);
+        Odontologo odontologoGloria = odontologoService.leerOdontologo(1L);
+        assertTrue(odontologoGloria != null);
 
     }
     public void cargarDataSet() {
-        OdontologoDTO odontologoDTO = new OdontologoDTO();
-        odontologoDTO.setNombre("Carga");
-        odontologoDTO.setApellido("informacion");
-        odontologoDTO.setMatricula(0000);
+        Odontologo odontologo = new Odontologo();
+        odontologo.setNombre("Carga");
+        odontologo.setApellido("informacion");
+        odontologo.setMatricula(0000);
+        odontologoService.crearOdontologo(odontologo);
     }
 
 
     @Test
     public void eliminarOdontologoTest() {
-        OdontologoDTO odontologoDTO = new OdontologoDTO();
-        odontologoDTO.setNombre("Carga");
-        odontologoDTO.setApellido("informacion");
-        odontologoDTO.setMatricula(0000);
-        Long id= odontologoDTO.getId();
-        odontologoService.eliminarOdontologo(2L);
-        Assert.assertTrue(odontologoService.leerOdontologo(2L)==null);
+        Odontologo odontologo = new Odontologo();
+        odontologo.setNombre("Carga");
+        odontologo.setApellido("informacion");
+        odontologo.setMatricula(0000);
+        odontologoService.crearOdontologo(odontologo);
+        odontologoService.eliminarOdontologo(1L);
+        assertTrue(odontologoService.leerOdontologo(1L) == null);
 
     }
 
     @Test
     public void traerTodos() {
         cargarDataSet();
-        Set<OdontologoDTO> odontologosDTO = odontologoService.listarOdontologos();
+        Set<Odontologo> odontologosDTO = odontologoService.listarOdontologos();
 
-        Assert.assertFalse(odontologosDTO.isEmpty());
-        //Assert.assertTrue(odontologosDTO.size() >= 1);
+        assertTrue(!odontologosDTO.isEmpty());
+        assertTrue(odontologosDTO.size() >= 1);
         System.out.println(odontologosDTO);
     }
 

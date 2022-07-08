@@ -1,5 +1,7 @@
 package com.dh.odontologia.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.Date;
 import javax.persistence.*;
 @Entity
@@ -9,10 +11,10 @@ public class Turno {
     @SequenceGenerator(name = "turno_sequence", sequenceName = "turno_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "turno_sequence")
     private Long id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name="paciente_id",nullable = false)
     private Paciente paciente;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name="odontologo_id", nullable = false)
     private Odontologo odontologo;
     private Date fecha;
@@ -24,9 +26,6 @@ public class Turno {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Paciente getPaciente() {
         return paciente;
@@ -52,5 +51,13 @@ public class Turno {
         this.fecha = fecha;
     }
 
-
+    @Override
+    public String toString() {
+        return "Turno{" +
+                "id=" + id +
+                ", paciente=" + paciente +
+                ", odontologo=" + odontologo +
+                ", fecha=" + fecha +
+                '}';
+    }
 }

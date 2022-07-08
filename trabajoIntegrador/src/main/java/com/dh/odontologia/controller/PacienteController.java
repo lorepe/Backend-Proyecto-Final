@@ -2,7 +2,7 @@ package com.dh.odontologia.controller;
 
 import com.dh.odontologia.exceptions.BadRequestException;
 import com.dh.odontologia.exceptions.ResourceNotFoundExceptions;
-import com.dh.odontologia.model.dto.PacienteDTO;
+import com.dh.odontologia.model.Paciente;
 import com.dh.odontologia.service.IDomicilioService;
 import com.dh.odontologia.service.IPacienteService;
 import org.apache.log4j.Logger;
@@ -32,27 +32,27 @@ public class PacienteController {
 
 
     @PostMapping
-    public ResponseEntity<?> crearPaciente(@RequestBody PacienteDTO pacienteDTO) throws BadRequestException {
-        if (pacienteDTO!= null){
-            domicilioService.crearDomicilio(pacienteDTO.getDomicilio());
-            pacienteService.crearPaciente(pacienteDTO);
+    public ResponseEntity<?> crearPaciente(@RequestBody Paciente paciente) throws BadRequestException {
+        if (paciente!= null){
+            domicilioService.crearDomicilio(paciente.getDomicilio());
+            pacienteService.crearPaciente(paciente);
         }else{
             String mensajeError= "Ingrese un paciente";
             throw new BadRequestException(mensajeError);
         }
 
-        return  ResponseEntity.ok(HttpStatus.OK);
+        return  ResponseEntity.ok("Paciente ("+paciente+ ") creado");
     }
 
     @GetMapping("/{id}")
-    public PacienteDTO getPaciente(@PathVariable Long id){
+    public Paciente getPaciente(@PathVariable Long id){
         return  pacienteService.leerPaciente(id);
     }
 
     @PutMapping
-    public ResponseEntity<?> modificarPaciente(@RequestBody PacienteDTO pacienteDTO) throws ResourceNotFoundExceptions {
-        pacienteService.modificarPaciente(pacienteDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<?> modificarPaciente(@RequestBody Paciente paciente) throws ResourceNotFoundExceptions {
+        pacienteService.modificarPaciente(paciente);
+        return ResponseEntity.ok("El paciente: ("+paciente + ") se ha modificado");
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarPaciente( @PathVariable Long id )throws ResourceNotFoundExceptions{
@@ -61,7 +61,7 @@ public class PacienteController {
         return ResponseEntity.ok("Eliminado");
     }
     @GetMapping
-    public Collection<PacienteDTO> getTodosPacientes(){
+    public Collection<Paciente> getTodosPacientes(){
         return pacienteService.listarPacientes();
     }
 

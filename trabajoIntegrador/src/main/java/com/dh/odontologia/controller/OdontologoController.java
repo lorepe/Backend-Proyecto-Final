@@ -1,7 +1,7 @@
 package com.dh.odontologia.controller;
 
 import com.dh.odontologia.exceptions.BadRequestException;
-import com.dh.odontologia.model.dto.OdontologoDTO;
+import com.dh.odontologia.model.Odontologo;
 import com.dh.odontologia.service.IOdontologoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,29 +18,29 @@ public class OdontologoController {
     @Autowired
     IOdontologoService odontologoService;
     @PostMapping
-    public ResponseEntity<?> crearOdontologo(@RequestBody OdontologoDTO odontologoDTO)throws BadRequestException {
-        odontologoService.crearOdontologo(odontologoDTO);
+    public ResponseEntity<?> crearOdontologo(@RequestBody Odontologo odontologo)throws BadRequestException {
+        odontologoService.crearOdontologo(odontologo);
 
-        logger.info("Se creo el odontologo: "+odontologoDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+        logger.info("Se creo el odontologo: "+odontologo);
+        return ResponseEntity.ok("Odontologo creado");
     }
 
     @GetMapping("/{id}")
-    public OdontologoDTO getOdontologo(@PathVariable Long id){
+    public Odontologo getOdontologo(@PathVariable Long id){
         return  odontologoService.leerOdontologo(id);
     }
     @PutMapping
-    public ResponseEntity<?> modificarOdontologo(@RequestBody OdontologoDTO odontologoDTO){
-        odontologoService.modificarOdontologo(odontologoDTO);
-        return ResponseEntity.ok(HttpStatus.OK);
+    public ResponseEntity<?> modificarOdontologo(@RequestBody Odontologo odontologo){
+        odontologoService.modificarOdontologo(odontologo);
+        return ResponseEntity.ok("El odontologo ("+odontologo+") se modifico");
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarOdontologo( @PathVariable Long id ){
         odontologoService.eliminarOdontologo(id);
-        return ResponseEntity.ok(HttpStatus.OK);
+        return ResponseEntity.ok("El odontologo con id: "+id+" se elimino");
     }
     @GetMapping
-    public Collection<OdontologoDTO> getTodosOdontologos(){
+    public Collection<Odontologo> getTodosOdontologos(){
         return odontologoService.listarOdontologos();
     }
 }

@@ -1,6 +1,6 @@
 package com.dh.odontologia.controller;
 
-import com.dh.odontologia.model.dto.TurnoDTO;
+import com.dh.odontologia.model.Turno;
 import com.dh.odontologia.service.ITurnoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,21 +17,21 @@ public class TurnoController {
     @Autowired
     ITurnoService turnoService;
     @PostMapping
-    public ResponseEntity<?> crearTurno(@RequestBody TurnoDTO turnoDTO){
-        turnoService.crearTurno(turnoDTO);
-        logger.info("Se crea un turno: "+ turnoDTO);
-        logger.debug("Se crea un turno: "+turnoDTO);
+    public ResponseEntity<?> crearTurno(@RequestBody Turno turno){
+        turnoService.crearTurno(turno);
+        logger.info("Se crea un turno: "+ turno);
+        logger.debug("Se crea un turno: "+turno);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public TurnoDTO getTurno(@PathVariable Long id){
+    public Turno getTurno(@PathVariable Long id){
         return  turnoService.leerTurno(id);
     }
     @PutMapping
-    public ResponseEntity<?> modificarTurno(@RequestBody TurnoDTO turnoDTO){
-        turnoService.modificarTurno(turnoDTO);
-        logger.info("Se modifico el turno :"+turnoDTO);
+    public ResponseEntity<?> modificarTurno(@RequestBody Turno turno){
+        turnoService.modificarTurno(turno);
+        logger.info("Se modifico el turno :"+turno);
         return ResponseEntity.ok(HttpStatus.OK);
     }
     @DeleteMapping("/{id}")
@@ -41,7 +41,7 @@ public class TurnoController {
         return ResponseEntity.ok(HttpStatus.OK);
     }
     @GetMapping
-    public Collection<TurnoDTO> getTodosTurnos(){
+    public Collection<Turno> getTodosTurnos(){
         return turnoService.listarTurnos();
     }
 }

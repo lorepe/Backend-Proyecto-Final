@@ -1,14 +1,14 @@
 package com.dh.odontologia.service;
 
-import com.dh.odontologia.model.dto.OdontologoDTO;
+import com.dh.odontologia.model.Odontologo;
 
 import java.util.Set;
 
 public interface IOdontologoService {
-    OdontologoDTO crearOdontologo(OdontologoDTO odontologoDTO);
-    OdontologoDTO leerOdontologo(Long id);
-    void modificarOdontologo(OdontologoDTO odontologoDTO);
+    Odontologo crearOdontologo(Odontologo odontologo);
+    Odontologo leerOdontologo(Long id);
+    void modificarOdontologo(Odontologo odontologo);
     void eliminarOdontologo(Long id);
-    Set<OdontologoDTO> listarOdontologos();
+    Set<Odontologo> listarOdontologos();
     //Set<OdontologoDTO> buscarOdontologoApellido(String lastname);
 }

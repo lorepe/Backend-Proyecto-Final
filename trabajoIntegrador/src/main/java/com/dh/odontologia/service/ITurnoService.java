@@ -1,13 +1,13 @@
 package com.dh.odontologia.service;
 
-import com.dh.odontologia.model.dto.TurnoDTO;
+import com.dh.odontologia.model.Turno;
 
 import java.util.Set;
 
 public interface ITurnoService {
-    void crearTurno(TurnoDTO turnoDTO);
-    TurnoDTO leerTurno(Long id);
-    void modificarTurno(TurnoDTO turnoDTO);
+    void crearTurno(Turno turno);
+    Turno leerTurno(Long id);
+    void modificarTurno(Turno turno);
     void eliminarTurno(Long id);
-    Set<TurnoDTO> listarTurnos();
+    Set<Turno> listarTurnos();
 }

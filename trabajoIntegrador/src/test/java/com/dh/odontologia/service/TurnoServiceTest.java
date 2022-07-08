@@ -1,9 +1,7 @@
 package com.dh.odontologia.service;
 
 import com.dh.odontologia.model.*;
-import com.dh.odontologia.model.dto.OdontologoDTO;
-import com.dh.odontologia.model.dto.PacienteDTO;
-import com.dh.odontologia.model.dto.TurnoDTO;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -29,32 +27,32 @@ class TurnoServiceTest {
     ObjectMapper mapper;
     @Test
     public void testCrearTurno(){
-        TurnoDTO turnoDTO = new TurnoDTO();
+        Turno turno = new Turno();
 
 
 
-        OdontologoDTO odontologoDTO = new OdontologoDTO();
-        odontologoDTO.setNombre("Odontologo");
-        odontologoDTO.setApellido("Apellido odont");
-        odontologoDTO.setMatricula(11111);
+        Odontologo odontologo = new Odontologo();
+        odontologo.setNombre("Odontologo");
+        odontologo.setApellido("Apellido odont");
+        odontologo.setMatricula(11111);
 
-        Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
-        turnoDTO.setOdontologo(odontologo);
+        //Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
+        turno.setOdontologo(odontologo);
 
-        PacienteDTO pacienteDTO = new PacienteDTO();
-        pacienteDTO.setNombre("Paciente");
-        pacienteDTO.setApellido("Apellido paciente ");
-        pacienteDTO.setDomicilio(new Domicilio("137A","103F","Suba","Bogota"));
+        Paciente paciente = new Paciente();
+        paciente.setNombre("Paciente");
+        paciente.setApellido("Apellido paciente ");
+        paciente.setDomicilio(new Domicilio("137A","103F","Suba","Bogota"));
 
-        Paciente paciente = mapper.convertValue(pacienteDTO, Paciente.class);
-        turnoDTO.setPaciente(paciente);
+        //Paciente paciente = mapper.convertValue(paciente, Paciente.class);
+        turno.setPaciente(paciente);
 
         Date fecha = new Date();
-        turnoDTO.setFecha(fecha);
+        turno.setFecha(fecha);
 
-        PacienteDTO pacienteMilena = pacienteService.leerPaciente(1L);
-        OdontologoDTO odontologoGloria = odontologoService.leerOdontologo(1L);
-        TurnoDTO turnoDTO1= turnoService.leerTurno(1L);
+        Paciente pacienteMilena = pacienteService.leerPaciente(1L);
+        Odontologo odontologoGloria = odontologoService.leerOdontologo(1L);
+        Turno turnoDTO1= turnoService.leerTurno(1L);
         Assert.assertTrue(turnoDTO1.getId() == 1);
         Assert.assertTrue(turnoDTO1.getId() == 1);
 
