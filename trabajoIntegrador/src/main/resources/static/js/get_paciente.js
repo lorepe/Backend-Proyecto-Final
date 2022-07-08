@@ -17,9 +17,10 @@ window.addEventListener('load', function () {
           //el estudiante
 
           var table = document.getElementById("pacienteTable");
-          var pacienteRow =table.insertRow();
+          var pacienteRow = table.insertRow();
           let tr_id = 'tr_' + paciente.id;
           pacienteRow.id = tr_id;
+          console.log(paciente)
 
 
           //por cada estudiante creamos un boton delete que agregaremos en cada fila para poder eliminar la misma
@@ -46,8 +47,8 @@ window.addEventListener('load', function () {
           //luego los datos del estudiante
           //como ultima columna el boton eliminar
          pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
-                              '<td class=\"td_first_name\">' + paciente.name.toUpperCase() + '</td>' +
-                              '<td class=\"td_last_name\">' + paciente.lastname.toUpperCase() + '</td>' +
+                              '<td class=\"td_first_name\">' + paciente.nombre.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name\">' + paciente.apellido.toUpperCase() + '</td>' +
                               '<td>' + deleteButton + '</td>';
 
         };

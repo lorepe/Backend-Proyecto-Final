@@ -15,7 +15,7 @@ public class Odontologo {
     private String nombre;
     private String apellido;
     private Integer matricula;
-    @OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "odontologo")
     @JsonIgnore
     private Set<Turno> turnos = new HashSet<>();
     public Odontologo() {

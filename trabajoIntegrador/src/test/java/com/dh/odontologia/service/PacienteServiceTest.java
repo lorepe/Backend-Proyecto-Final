@@ -59,7 +59,8 @@ class PacienteServiceTest {
     public void eliminarPacienteTest() throws ResourceNotFoundExceptions {
         cargarDataSet();
         pacienteService.eliminarPaciente(1L);
-        assertTrue(pacienteService.leerPaciente(1L) == null);
+        Paciente paciente =pacienteService.leerPaciente(1L);
+        assertTrue(paciente == null);
 
     }
 

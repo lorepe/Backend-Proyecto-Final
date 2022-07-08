@@ -2,17 +2,17 @@ window.addEventListener('load', function () {
 
      //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
      //los datos que el usuario cargará del nuevo estudiante
-    const formulario = document.querySelector('#nuevo_paciente');
+    const formulario = document.querySelector('#add_new_paciente');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
 
         //creamos un JSON que tendrá los datos del nuevo estudiante
         const formData = {
-            name: document.querySelector('#nombre').value,
-            lastname: document.querySelector('#apellido').value,
+            nombre: document.querySelector('#nombre').value,
+            apellido: document.querySelector('#apellido').value,
             dni: document.querySelector('#dni').value,
-            date: document.querySelector('#fechaIngreso').value
+            fechaIngreso: document.querySelector('#fechaIngreso').value
         };
 
         //invocamos utilizando la función fetch la API estudiantes con el método POST

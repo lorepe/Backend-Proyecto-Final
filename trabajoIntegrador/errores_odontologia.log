@@ -132,3 +132,20 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
  at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 25] (through reference chain: com.dh.odontologia.model.Turno["odontologo"])
 [2022-07-0800:11:28] [ INFO ] [TurnoController:22] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jun 27 19:00:00 COT 2022}
 [2022-07-0800:11:28] [ DEBUG] [TurnoController:23] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jun 27 19:00:00 COT 2022}
+[2022-07-0812:44:21] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-0812:49:18] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-0812:58:39] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0812:58:44] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0812:58:47] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0812:59:05] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint [FK4OKCQR9IQT2IW6XHY1PPSMO3L]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[2022-07-0813:00:44] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0813:00:52] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0813:00:55] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0813:04:29] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0813:04:33] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0813:04:36] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0814:15:06] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0814:15:09] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0814:15:18] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
+[2022-07-0814:15:22] [ INFO ] [TurnoController:22] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jun 27 19:00:00 COT 2022}
+[2022-07-0814:15:22] [ DEBUG] [TurnoController:23] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jun 27 19:00:00 COT 2022}
