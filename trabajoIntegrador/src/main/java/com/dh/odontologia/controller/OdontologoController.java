@@ -26,16 +26,19 @@ public class OdontologoController {
 
     @GetMapping("/{id}")
     public Odontologo getOdontologo(@PathVariable Long id){
+        logger.info("Se busco el odontologo con id "+id);
         return  odontologoService.leerOdontologo(id);
     }
     @PutMapping
     public ResponseEntity<?> modificarOdontologo(@RequestBody Odontologo odontologo){
-        odontologoService.modificarOdontologo(odontologo);
+        Odontologo odontologo1 =odontologoService.modificarOdontologo(odontologo);
+        logger.info("Se modifico el odontologo con id: "+odontologo1.getId());
         return ResponseEntity.ok("El odontologo ("+odontologo+") se modifico");
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminarOdontologo( @PathVariable Long id ){
         odontologoService.eliminarOdontologo(id);
+        logger.info("El odontologo con id: "+id+" se elimino");
         return ResponseEntity.ok("El odontologo con id: "+id+" se elimino");
     }
     @GetMapping

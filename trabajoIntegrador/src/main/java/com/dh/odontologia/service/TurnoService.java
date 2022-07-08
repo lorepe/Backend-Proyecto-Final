@@ -38,8 +38,8 @@ public class TurnoService implements ITurnoService{
     }
 
     @Override
-    public void modificarTurno(Turno turno) {
-        guardarTurno(turno);
+    public Turno modificarTurno(Turno turno) {
+        return guardarTurno(turno);
     }
 
     @Override

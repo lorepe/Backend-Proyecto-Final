@@ -27,7 +27,10 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringBootTest
 class PacienteServiceTest {
     @Autowired
-    private PacienteService pacienteService;
+    private IPacienteService pacienteService;
+    @Autowired
+    private IDomicilioService domicilioService;
+
     @Test
     public void CrearPacienteTest (){
         Paciente paciente = new Paciente();
@@ -37,7 +40,7 @@ class PacienteServiceTest {
         paciente.setDomicilio(domicilio);
         Date fecha = new Date();
         paciente.setFechaIngreso(fecha);
-
+        domicilioService.crearDomicilio(domicilio);
         pacienteService.crearPaciente(paciente);
         Paciente paciente1 = pacienteService.leerPaciente(1L);
         assertTrue(paciente1 != null);
@@ -51,6 +54,7 @@ class PacienteServiceTest {
         paciente.setDomicilio(domicilio);
         Date fecha = new Date();
         paciente.setFechaIngreso(fecha);
+        domicilioService.crearDomicilio(domicilio);
         pacienteService.crearPaciente(paciente);
     }
 
@@ -82,7 +86,7 @@ class PacienteServiceTest {
         paciente.setDomicilio(domicilio);
         Date fecha = new Date();
         paciente.setFechaIngreso(fecha);
-
+        domicilioService.crearDomicilio(domicilio);
         Paciente p = pacienteService.crearPaciente(paciente);
         Paciente original = pacienteService.leerPaciente(p.getId());
         p.setNombre("Pepito");
