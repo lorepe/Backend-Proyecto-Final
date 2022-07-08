@@ -20,41 +20,41 @@ class TurnoServiceTest {
     @Autowired
     private ITurnoService turnoService;
     @Autowired
-    private OdontologoService odontologoService;
+    private IOdontologoService odontologoService;
     @Autowired
-    private PacienteService pacienteService;
-    @Autowired
-    ObjectMapper mapper;
+    private IPacienteService pacienteService;
+
     @Test
     public void testCrearTurno(){
         Turno turno = new Turno();
-
-
 
         Odontologo odontologo = new Odontologo();
         odontologo.setNombre("Odontologo");
         odontologo.setApellido("Apellido odont");
         odontologo.setMatricula(11111);
-
-        //Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
-        turno.setOdontologo(odontologo);
+        odontologoService.crearOdontologo(odontologo);
+         turno.setOdontologo(odontologo);
 
         Paciente paciente = new Paciente();
         paciente.setNombre("Paciente");
         paciente.setApellido("Apellido paciente ");
         paciente.setDomicilio(new Domicilio("137A","103F","Suba","Bogota"));
-
-        //Paciente paciente = mapper.convertValue(paciente, Paciente.class);
+        Date fecha1 = new Date();
+        paciente.setFechaIngreso(fecha1);
+        pacienteService.crearPaciente(paciente);
         turno.setPaciente(paciente);
 
         Date fecha = new Date();
         turno.setFecha(fecha);
+        turnoService.crearTurno(turno);
 
         Paciente pacienteMilena = pacienteService.leerPaciente(1L);
         Odontologo odontologoGloria = odontologoService.leerOdontologo(1L);
-        Turno turnoDTO1= turnoService.leerTurno(1L);
-        Assert.assertTrue(turnoDTO1.getId() == 1);
-        Assert.assertTrue(turnoDTO1.getId() == 1);
+        Turno turnoRecibido = turnoService.leerTurno(1L);
+        Assert.assertTrue(turnoRecibido != null );
+        Assert.assertTrue(pacienteMilena != null );
+        Assert.assertTrue(odontologoGloria != null );
+
 
 
     }

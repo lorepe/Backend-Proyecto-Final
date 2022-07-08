@@ -38,24 +38,20 @@ class OdontologoServiceTest {
 
     @Test
     public void eliminarOdontologoTest() {
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Carga");
-        odontologo.setApellido("informacion");
-        odontologo.setMatricula(0000);
-        odontologoService.crearOdontologo(odontologo);
+        cargarDataSet();
         odontologoService.eliminarOdontologo(1L);
         assertTrue(odontologoService.leerOdontologo(1L) == null);
 
     }
 
     @Test
-    public void traerTodos() {
+    public void traerTodosTest() {
         cargarDataSet();
-        Set<Odontologo> odontologosDTO = odontologoService.listarOdontologos();
+        Set<Odontologo> odontologos = odontologoService.listarOdontologos();
 
-        assertTrue(!odontologosDTO.isEmpty());
-        assertTrue(odontologosDTO.size() >= 1);
-        System.out.println(odontologosDTO);
+        assertTrue(!odontologos.isEmpty());
+        assertTrue(odontologos.size() >= 1);
+        System.out.println(odontologos);
     }
 
 

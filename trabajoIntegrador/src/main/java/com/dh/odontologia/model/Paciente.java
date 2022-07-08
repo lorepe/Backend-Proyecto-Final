@@ -19,7 +19,7 @@ public class Paciente {
     private String dni;
     private Date fechaIngreso;
     //*@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domicilio_id")
     private Domicilio domicilio;
     @OneToMany(mappedBy = "paciente",fetch = FetchType.LAZY)

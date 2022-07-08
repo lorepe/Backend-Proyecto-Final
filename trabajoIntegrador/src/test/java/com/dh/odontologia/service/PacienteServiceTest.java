@@ -28,19 +28,7 @@ class PacienteServiceTest {
     @Autowired
     private PacienteService pacienteService;
     @Test
-    public void testCrearPaciente(){
-        Date fecha = new Date();
-        Paciente paciente = new Paciente();
-
-        paciente.setNombre("Prueba");
-        paciente.setApellido("Creacion");
-        paciente.setDni("0000");
-        paciente.setFechaIngreso(fecha);
-        Domicilio domicilio = new Domicilio("137","103","Bogota","bogota");
-        paciente.setDomicilio(domicilio);
-    }
-    @Test
-    public void testCrearOdontologo(){
+    public void CrearPacienteTest (){
         Paciente paciente = new Paciente();
         paciente.setNombre("Gloria");
         paciente.setApellido("Escobar Ruiz");
@@ -67,7 +55,7 @@ class PacienteServiceTest {
 
 
     @Test
-    public void eliminarOdontologoTest() throws ResourceNotFoundExceptions {
+    public void eliminarPacienteTest() throws ResourceNotFoundExceptions {
         cargarDataSet();
         pacienteService.eliminarPaciente(1L);
         assertTrue(pacienteService.leerPaciente(1L) == null);
@@ -75,13 +63,31 @@ class PacienteServiceTest {
     }
 
     @Test
-    public void traerTodos() {
+    public void traerTodosTest() {
         cargarDataSet();
         Collection<Paciente> pacientes = pacienteService.listarPacientes();
 
         assertTrue(!pacientes.isEmpty());
         assertTrue(pacientes.size() != 0);
         System.out.println(pacientes);
+    }
+    @Test
+    public void editarPacieteTest() throws ResourceNotFoundExceptions {
+        Paciente paciente = new Paciente();
+        paciente.setNombre("Carga");
+        paciente.setApellido("informacion");
+        Domicilio domicilio = new Domicilio("00","00","prueba","test");
+        paciente.setDomicilio(domicilio);
+        Date fecha = new Date();
+        paciente.setFechaIngreso(fecha);
+
+        Paciente p = pacienteService.crearPaciente(paciente);
+        Paciente original = pacienteService.leerPaciente(p.getId());
+        p.setNombre("Pepito");
+        pacienteService.modificarPaciente(p);
+        assertNotEquals(actualizado, original);
+
+
     }
 
 }
