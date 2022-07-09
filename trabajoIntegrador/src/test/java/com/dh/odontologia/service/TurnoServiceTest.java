@@ -50,7 +50,7 @@ class TurnoServiceTest {
     }
 
     @Test
-    public void test01CrearTurnoConPacienteYOdontologoExistente() {
+    public void crearTurnoTest() {
         cargarDataSet();
         Paciente paciente = pacienteService.leerPaciente(1L);
         Odontologo odontologo = odontologoService.leerOdontologo(1L);

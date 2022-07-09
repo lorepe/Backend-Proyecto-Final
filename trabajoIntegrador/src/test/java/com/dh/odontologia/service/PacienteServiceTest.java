@@ -5,6 +5,7 @@ import com.dh.odontologia.model.Domicilio;
 import com.dh.odontologia.model.Odontologo;
 import com.dh.odontologia.model.Paciente;
 
+import com.dh.odontologia.model.Turno;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 /*
 @RunWith(SpringRunner.class)
@@ -31,21 +31,7 @@ class PacienteServiceTest {
     @Autowired
     private IDomicilioService domicilioService;
 
-    @Test
-    public void CrearPacienteTest (){
-        Paciente paciente = new Paciente();
-        paciente.setNombre("Gloria");
-        paciente.setApellido("Escobar Ruiz");
-        Domicilio domicilio = new Domicilio("137","103","Bogota","bogota");
-        paciente.setDomicilio(domicilio);
-        Date fecha = new Date();
-        paciente.setFechaIngreso(fecha);
-        domicilioService.crearDomicilio(domicilio);
-        pacienteService.crearPaciente(paciente);
-        Paciente paciente1 = pacienteService.leerPaciente(1L);
-        assertTrue(paciente1 != null);
 
-    }
     public void cargarDataSet() {
         Paciente paciente = new Paciente();
         paciente.setNombre("Carga");
@@ -79,6 +65,7 @@ class PacienteServiceTest {
     }
     @Test
     public void editarPacieteTest() throws ResourceNotFoundExceptions {
+        cargarDataSet();
         Paciente paciente = new Paciente();
         paciente.setNombre("Carga");
         paciente.setApellido("informacion");
@@ -89,10 +76,24 @@ class PacienteServiceTest {
         domicilioService.crearDomicilio(domicilio);
         Paciente p = pacienteService.crearPaciente(paciente);
         Paciente original = pacienteService.leerPaciente(p.getId());
-        p.setNombre("Pepito");
+        p.setNombre("Modificado");
         Paciente actualizado=pacienteService.modificarPaciente(p);
         assertNotEquals(actualizado, original);
 
+
+    }
+    @Test
+    public void crearPacienteTest (){
+        cargarDataSet();
+
+        Paciente paciente = new Paciente();
+        paciente.setNombre("Prueba");
+        paciente.setApellido("Crear");
+        paciente.setDni("101245");
+        Date fecha = new Date();
+        paciente.setFechaIngreso(fecha);
+        Paciente pacienteCreado = pacienteService.crearPaciente(paciente);
+        assertNotNull(pacienteService.leerPaciente(pacienteCreado.getId()));
 
     }
 
