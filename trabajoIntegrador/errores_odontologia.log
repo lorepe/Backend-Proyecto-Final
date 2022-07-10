@@ -152,3 +152,16 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
 [2022-07-0916:49:06] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
 [2022-07-0921:39:58] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
 [2022-07-0921:44:46] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-0922:10:23] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-0922:10:32] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0922:16:09] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=2, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0922:20:28] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-0922:25:07] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-0922:25:10] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0922:26:54] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-0922:26:57] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0922:27:04] [ INFO ] [PacienteController:43] Se creo el paciente Paciente{id=null, nombre='prueba', apellido='apellido', dni='10123458', fechaIngreso=Mon Jun 27 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='123', numero='456', localidad='bogota', provincia='bogota'}, turnos=[]}
+[2022-07-0922:28:51] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-0922:28:54] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
+[2022-07-0922:28:57] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-0922:51:44] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
