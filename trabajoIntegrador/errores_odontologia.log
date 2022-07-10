@@ -149,3 +149,6 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
 [2022-07-0814:15:18] [ INFO ] [OdontologoController:43] Se estan listando los odontologos
 [2022-07-0814:15:22] [ INFO ] [TurnoController:22] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jun 27 19:00:00 COT 2022}
 [2022-07-0814:15:22] [ DEBUG] [TurnoController:23] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jun 27 19:00:00 COT 2022}
+[2022-07-0916:49:06] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-0921:39:58] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-0921:44:46] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.

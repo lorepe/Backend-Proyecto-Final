@@ -40,7 +40,7 @@ public class PacienteController {
 
             throw new BadRequestException("Ingrese un paciente");
         }
-
+        logger.info("Se creo el paciente "+paciente);
         return  ResponseEntity.ok("Paciente ("+paciente+ ") creado");
     }
 
