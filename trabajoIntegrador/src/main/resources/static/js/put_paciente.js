@@ -6,6 +6,7 @@ window.addEventListener('load', function () {
     formulario.addEventListener('submit', function (event) {
         let studentId = document.querySelector('#paciente_id').value;
 
+        const idInput= document.querySelector('#domicilio_id').value;
         const calleInput= document.querySelector('#calle').value;
         const numeroInput= document.querySelector('#numero').value;
         const localidadInput= document.querySelector('#localidad').value;
@@ -14,11 +15,13 @@ window.addEventListener('load', function () {
         //a diferencia de un estudiante nuevo en este caso enviamos el id
         //para poder identificarlo y modificarlo para no cargarlo como nuevo
         const formData = {
+            id: document.querySelector('#paciente_id').value,
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
             dni: document.querySelector('#dni').value,
             fechaIngreso: document.querySelector('#fechaIngreso').value,
             domicilio: {
+                id:idInput,
                 calle: calleInput,
                 numero: numeroInput,
                 localidad: localidadInput,
@@ -26,6 +29,7 @@ window.addEventListener('load', function () {
             }
 
         };
+        console.log(formData)
 
         //invocamos utilizando la función fetch la API estudiantes con el método PUT
         //que modificará al estudiante que enviaremos en formato JSON
@@ -55,10 +59,12 @@ window.addEventListener('load', function () {
           .then(response => response.json())
           .then(data => {
               let paciente = data;
+              console.log(paciente)
               document.querySelector('#paciente_id').value = paciente.id;
               document.querySelector('#nombre').value = paciente.nombre;
               document.querySelector('#apellido').value = paciente.apellido;
               document.querySelector('#dni').value = paciente.dni;
+              document.querySelector('#domicilio_id').value = paciente.domicilio.id;
               document.querySelector('#fechaIngreso').value = paciente.fechaIngreso;
               document.querySelector('#calle').value = paciente.domicilio.calle;
               document.querySelector('#numero').value = paciente.domicilio.numero;

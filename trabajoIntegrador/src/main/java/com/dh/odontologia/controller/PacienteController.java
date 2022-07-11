@@ -40,8 +40,6 @@ public class PacienteController {
             return  ResponseEntity.ok("Paciente ("+paciente+ ") creado");
         }else{
             throw new BadRequestException("Ingrese un paciente");
-            ResponseEntity re= new ResponseEntity.of("Error",HttpStatus.BAD_REQUEST);
-            return re;
         }
 
 

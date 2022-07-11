@@ -224,3 +224,20 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
 [2022-07-1023:15:59] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint ["FKQTJ6T7MULC2JMFKV92X4CTKWH: PUBLIC.TURNOS FOREIGN KEY(ODONTOLOGO_ID) REFERENCES PUBLIC.ODONTOLOGOS(ID) (CAST(1 AS BIGINT))"; SQL statement:
 delete from odontologos where id=? [23503-212]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
 [2022-07-1023:16:00] [ INFO ] [OdontologoController:41] El odontologo con id: 2 se elimino
+[2022-07-1107:52:04] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='mai', apellido='Perez', matricula=14687, turnos=[]}
+[2022-07-1107:52:16] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1107:52:18] [ INFO ] [OdontologoController:29] Se busco el odontologo con id 1
+[2022-07-1107:52:29] [ INFO ] [OdontologoController:35] Se modifico el odontologo con id: 1
+[2022-07-1107:52:29] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1107:53:09] [ INFO ] [PacienteController:39] Se creo el paciente Paciente{id=null, nombre='mai', apellido='Perez', dni='145646', fechaIngreso=Sun Jul 10 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='89', localidad='bfdg', provincia='sdf'}, turnos=[]}
+[2022-07-1107:54:34] [ INFO ] [TurnoController:22] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Sun Jul 10 19:00:00 COT 2022}
+[2022-07-1107:54:34] [ DEBUG] [TurnoController:23] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Sun Jul 10 19:00:00 COT 2022}
+[2022-07-1108:02:11] [ INFO ] [PacienteController:39] Se creo el paciente Paciente{id=null, nombre='Gloria', apellido='Ruiz', dni='456789', fechaIngreso=Sun Jul 10 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='137a', numero='103f', localidad='Suba', provincia='costazul'}, turnos=[]}
+[2022-07-1108:05:28] [ INFO ] [PacienteController:39] Se creo el paciente Paciente{id=null, nombre='Lorena', apellido='Escobar', dni='1016942020', fechaIngreso=Sun Jul 17 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='103f', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='costazul'}, turnos=[]}
+[2022-07-1108:05:50] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='Gloria', apellido='Ruiz', matricula=12344, turnos=[]}
+[2022-07-1108:05:54] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1108:05:59] [ INFO ] [OdontologoController:29] Se busco el odontologo con id 1
+[2022-07-1108:06:19] [ INFO ] [OdontologoController:35] Se modifico el odontologo con id: 1
+[2022-07-1108:06:19] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1108:09:20] [ INFO ] [PacienteController:39] Se creo el paciente Paciente{id=null, nombre='Lorena', apellido='Escobar', dni='1016942020', fechaIngreso=Wed Jul 20 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='103f', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='costazul'}, turnos=[]}
+[2022-07-1108:13:21] [ INFO ] [PacienteController:39] Se creo el paciente Paciente{id=null, nombre='Lorena', apellido='Escobar', dni='1016942020', fechaIngreso=Wed Aug 03 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='costazul'}, turnos=[]}
