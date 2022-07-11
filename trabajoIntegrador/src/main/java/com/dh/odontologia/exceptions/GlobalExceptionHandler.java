@@ -23,7 +23,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler({ResourceNotFoundExceptions.class})
-    public ResponseEntity<?> procesarErrorBadRequest(ResourceNotFoundExceptions ex) {
+    public ResponseEntity<?> procesarErrorNotFound(ResourceNotFoundExceptions ex) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage() + " capturado desde la clase... " + this.getClass().getName() + " de manera global");
     }
 

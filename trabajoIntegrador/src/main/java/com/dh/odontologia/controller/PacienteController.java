@@ -36,12 +36,15 @@ public class PacienteController {
         if (paciente!= null){
             domicilioService.crearDomicilio(paciente.getDomicilio());
             pacienteService.crearPaciente(paciente);
+            logger.info("Se creo el paciente "+paciente);
+            return  ResponseEntity.ok("Paciente ("+paciente+ ") creado");
         }else{
-
             throw new BadRequestException("Ingrese un paciente");
+            ResponseEntity re= new ResponseEntity.of("Error",HttpStatus.BAD_REQUEST);
+            return re;
         }
-        logger.info("Se creo el paciente "+paciente);
-        return  ResponseEntity.ok("Paciente ("+paciente+ ") creado");
+
+
     }
 
     @GetMapping("/{id}")
