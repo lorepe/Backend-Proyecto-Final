@@ -1,18 +1,11 @@
 package com.dh.odontologia.service;
 
 import com.dh.odontologia.exceptions.ResourceNotFoundExceptions;
-import com.dh.odontologia.model.Domicilio;
 import com.dh.odontologia.model.Odontologo;
-import com.dh.odontologia.model.Paciente;
-import com.dh.odontologia.model.Turno;
-import org.junit.*;
-import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.Date;
 import java.util.Set;
 
 

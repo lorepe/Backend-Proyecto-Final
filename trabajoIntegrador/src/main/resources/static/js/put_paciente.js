@@ -6,10 +6,10 @@ window.addEventListener('load', function () {
     formulario.addEventListener('submit', function (event) {
         let studentId = document.querySelector('#paciente_id').value;
 
-        const calleInput= document.querySelector('#calle').value
-        const numeroInput= document.querySelector('#numero').value
-        const localidadInput= document.querySelector('#localidad').value
-        const provinciaInput= document.querySelector('#provincia').value
+        const calleInput= document.querySelector('#calle').value;
+        const numeroInput= document.querySelector('#numero').value;
+        const localidadInput= document.querySelector('#localidad').value;
+        const provinciaInput= document.querySelector('#provincia').value;
         //creamos un JSON que tendrá los datos del estudiante
         //a diferencia de un estudiante nuevo en este caso enviamos el id
         //para poder identificarlo y modificarlo para no cargarlo como nuevo
@@ -58,11 +58,11 @@ window.addEventListener('load', function () {
               document.querySelector('#paciente_id').value = paciente.id;
               document.querySelector('#nombre').value = paciente.nombre;
               document.querySelector('#apellido').value = paciente.apellido;
-              document.querySelector('#dni').value=paciente.dni;
-              document.querySelector('#fechaIngreso').value=paciente,fechaIngreso;
-              document.querySelector('#calle').value=paciente.domicilio.calle;
-              document.querySelector('#numero').value=paciente.domicilio.numero;
-              document.querySelector('#localidad').value=paciente.domicilio.localidad;
+              document.querySelector('#dni').value = paciente.dni;
+              document.querySelector('#fechaIngreso').value = paciente.fechaIngreso;
+              document.querySelector('#calle').value = paciente.domicilio.calle;
+              document.querySelector('#numero').value = paciente.domicilio.numero;
+              document.querySelector('#localidad').value = paciente.domicilio.localidad;
               document.querySelector('#provincia').value=paciente.domicilio.provincia;
 
 

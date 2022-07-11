@@ -2,28 +2,15 @@ package com.dh.odontologia.service;
 
 import com.dh.odontologia.exceptions.ResourceNotFoundExceptions;
 import com.dh.odontologia.model.Domicilio;
-import com.dh.odontologia.model.Odontologo;
 import com.dh.odontologia.model.Paciente;
-
-import com.dh.odontologia.model.Turno;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-/*
-@RunWith(SpringRunner.class)
-@SpringBootTest
-@AutoConfigureMockMvc(addFilters = false)
-* */
+
 @SpringBootTest
 class PacienteServiceTest {
     @Autowired

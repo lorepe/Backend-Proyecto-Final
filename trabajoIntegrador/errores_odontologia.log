@@ -185,3 +185,6 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
  at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 51] (through reference chain: com.dh.odontologia.model.Odontologo["matricula"])
 [2022-07-1022:32:02] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
 [2022-07-1022:32:20] [ ERROR] [GlobalExceptionHandler:16] could not execute statement; SQL [n/a]; constraint [FKQTJ6T7MULC2JMFKV92X4CTKWH]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+[2022-07-1022:41:05] [ INFO ] [PacienteController:43] Se creo el paciente Paciente{id=null, nombre='Lorena', apellido='Escobar', dni='1016942020', fechaIngreso=Mon Jul 04 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='costazul'}, turnos=[]}
+[2022-07-1022:41:16] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1022:44:08] [ INFO ] [PacienteController:43] Se creo el paciente Paciente{id=null, nombre='Lorena', apellido='Escobar', dni='1016942020', fechaIngreso=Thu Jul 21 19:00:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='costazul'}, turnos=[]}
