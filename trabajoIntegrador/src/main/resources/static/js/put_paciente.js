@@ -43,6 +43,7 @@ window.addEventListener('load', function () {
         }
           fetch(url,settings)
           .then(response => response.json())
+          .then(data=> console.log(data))
 
     })
  })
@@ -60,6 +61,7 @@ window.addEventListener('load', function () {
           .then(data => {
               let paciente = data;
               console.log(paciente)
+
               document.querySelector('#paciente_id').value = paciente.id;
               document.querySelector('#nombre').value = paciente.nombre;
               document.querySelector('#apellido').value = paciente.apellido;
@@ -71,10 +73,12 @@ window.addEventListener('load', function () {
               document.querySelector('#localidad').value = paciente.domicilio.localidad;
               document.querySelector('#provincia').value=paciente.domicilio.provincia;
 
-
+            console.log(paciente)
             //el formulario por default esta oculto y al editar se habilita
               document.querySelector('#div_paciente_updating').style.display = "block";
           }).catch(error => {
               alert("Error: " + error);
+              console.log(error.cause)
+              console.log(error)
           })
       }

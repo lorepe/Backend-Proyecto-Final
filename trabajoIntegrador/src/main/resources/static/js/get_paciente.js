@@ -49,6 +49,7 @@ window.addEventListener('load', function () {
          pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
                               '<td class=\"td_first_name\">' + paciente.nombre.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.apellido.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name\">' + paciente.domicilio.id + '</td>' +
                               '<td class=\"td_last_name\">' +'Calle:' + paciente.domicilio.calle+'Número:' + paciente.domicilio.numero+ '</td>' +
                               '<td class=\"td_last_name\">' +'Número:' + paciente.domicilio.numero+ '</td>' +
                               '<td class=\"td_last_name\">' +'Localidad:' + paciente.domicilio.localidad+ '</td>' +
