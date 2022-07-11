@@ -44,10 +44,10 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Paciente</th>
-                <th>Paciente Apellido</th>
-                <th>Odontologo</th>
-                <th>Odontologo Apellido</th>
+                <th>Nombre Paciente</th>
+                <th>Apellido Paciente</th>
+                <th>Nombre Odontologo</th>
+                <th>Apellido Odontologo</th>
                 <th>Fecha</th>
                 <th></th>
               </tr>
@@ -83,7 +83,7 @@
                 type="number"
                 class="form-control"
                 id="paciente_id"
-                readonly
+                
               />
             </div>
 
@@ -93,13 +93,13 @@
                 type="number"
                 class="form-control"
                 id="odontologo_id"
-                readonly
+                
               />
             </div>
             <div class="form-group">
               <label>Fecha:</label>
               <input
-                type="date"
+                type="datetime-local"
                 placeholder="Ingrese la fecha (AAAA-MM-DDT00:00:00)"
                 class="form-control"
                 id="fecha"

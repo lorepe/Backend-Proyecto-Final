@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
               document.querySelector('#odontologo_id').value = odontologo.id;
               document.querySelector('#nombre').value = odontologo.nombre;
               document.querySelector('#apellido').value = odontologo.apellido;
-              document.querySelector('#matricula').value = odontologo.apellido;
+              document.querySelector('#matricula').value = odontologo.matricula;
 
             //el formulario por default esta oculto y al editar se habilita
               document.querySelector('#div_odontologo_updating').style.display = "block";
