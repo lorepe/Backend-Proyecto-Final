@@ -17,7 +17,7 @@ public class OdontologoController {
     @Autowired
     IOdontologoService odontologoService;
     @PostMapping
-    public ResponseEntity<?> crearOdontologo(@RequestBody Odontologo odontologo)throws BadRequestException {
+    public ResponseEntity<?> crearOdontologo( @RequestBody Odontologo odontologo)throws BadRequestException {
         odontologoService.crearOdontologo(odontologo);
 
         logger.info("Se creo el odontologo: "+odontologo);
