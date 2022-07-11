@@ -165,3 +165,11 @@ insert into pacientes (apellido, dni, fecha_ingreso, nombre, id) values (?, ?, ?
 [2022-07-0922:28:54] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='lore', apellido='apellido', matricula=10123458, turnos=[]}
 [2022-07-0922:28:57] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
 [2022-07-0922:51:44] [ ERROR] [GlobalExceptionHandler:16] Entity must not be null.; nested exception is java.lang.IllegalArgumentException: Entity must not be null.
+[2022-07-1001:38:56] [ ERROR] [GlobalExceptionHandler:16] Request method 'GET' not supported
+[2022-07-1020:01:24] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1020:01:32] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Cannot deserialize value of type `java.lang.Integer` from String "bk,.jkj.jk.": not a valid `java.lang.Integer` value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Integer` from String "bk,.jkj.jk.": not a valid `java.lang.Integer` value
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 53] (through reference chain: com.dh.odontologia.model.Odontologo["matricula"])
+[2022-07-1020:01:34] [ INFO ] [OdontologoController:46] Se estan listando los odontologos
+[2022-07-1020:03:33] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='Lorena', apellido='Escobar', matricula=15456, turnos=[]}
+[2022-07-1020:04:33] [ INFO ] [OdontologoController:23] Se creo el odontologo: Odontologo{id=1, nombre='Lorena', apellido='Escobar', matricula=145666, turnos=[]}
+[2022-07-1020:04:35] [ INFO ] [OdontologoController:46] Se estan listando los odontologos

@@ -8,43 +8,36 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/js/post_odontologo.js"></script>
+    <script type="text/javascript" src="/js/delete_odontologo.js"></script>
 </head>
 <body>
 <div class="container">
     <ul class="nav nav-pills">
-        <li class="nav-item">
+       <li class="nav-item">
             <a class="nav-link" href="/odontologoList.html">Listar Odontologos</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/odontologoActualizar.html">Actualizar Odontologo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/odontologoAlta.html">Agregar Odontologo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/odontologoEliminar.html">Eliminar Odontologo</a>
         </li>
     </ul>
     <div class="row">
         <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
-            <h3>Agregar Paciente</h3>
+            <h3>Actualizar Odontologo</h3>
             <form id="add_new_odontologo">
                 <div class="form-group">
-                    <label class="control-label" for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre"
-                           placeholder="Ingrese el nombre"
-                           name="nombre" required></input>
+                    <label class="control-label" for="id">Id:</label>
+                    <input type="text" class="form-control" id="id"
+                           placeholder="Ingrese el id"
+                           name="id" required></input>
                 </div>
-                <div class="form-group">
-                    <label class="control-label" for="apellido">Apellido:</label>
-                    <input type="text" class="form-control" id="apellido"
-                           placeholder="Ingrese el apellido"
-                           name="apellido" required></input>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label" for="matricula">Matricula:</label>
-                    <input type="text" class="form-control" id="matricula"
-                           placeholder="Ingrese la matricula"
-                           name="matricula" required></input>
-                </div>
-
-
                 <button type="submit" class="btn btn-danger"
-                        id="btn-add-new-odontologo">Guardar</button>
+                        id="btn-add-new-odontologo">Eliminar</button>
             </form>
             <div id="response" style="display:none; margin-top:10px">
             </div>

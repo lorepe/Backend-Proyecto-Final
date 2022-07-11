@@ -15,12 +15,20 @@
     <ul class="nav nav-pills">
         <li class="nav-item">
             <a class="nav-link" href="/odontologoList.html">Listar Odontologos</a>
+        </li>
+        <li class="nav-item">
             <a class="nav-link" href="/odontologoActualizar.html">Actualizar Odontologo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/odontologoAlta.html">Agregar Odontologo</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/odontologoEliminar.html">Eliminar Odontologo</a>
         </li>
     </ul>
     <div class="row">
         <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
-            <h3>Agregar Paciente</h3>
+            <h3>Agregar Odontologo</h3>
             <form id="add_new_odontologo">
                 <div class="form-group">
                     <label class="control-label" for="nombre">Nombre:</label>
@@ -37,7 +45,7 @@
 
                 <div class="form-group">
                     <label class="control-label" for="matricula">Matricula:</label>
-                    <input type="text" class="form-control" id="matricula"
+                    <input type="number" class="form-control" id="matricula"
                            placeholder="Ingrese la matricula"
                            name="matricula" required></input>
                 </div>
