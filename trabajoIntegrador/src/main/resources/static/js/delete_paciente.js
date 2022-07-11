@@ -2,11 +2,11 @@ function deleteBy(id)
 {
            //con fetch invocamos a la API de estudiantes con el método DELETE
            //pasandole el id en la URL
-          const url = '/odontologos/'+ id;
+          const url = '/pacientes/'+ id;
           const settings = {
               method: 'DELETE'
           }
-          fetch(url,settings)
+          fetch('/pacientes/'+ id,settings)
           .then(response => response.json())
 
           //borrar la fila del estudiante eliminado
