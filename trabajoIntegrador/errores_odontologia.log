@@ -312,3 +312,71 @@ delete from odontologos where id=? [23503-212]]; nested exception is org.hiberna
 [2022-07-1112:49:56] [ INFO ] [PacienteController:93] Listando los pacientes
 [2022-07-1112:50:03] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
 [2022-07-1112:50:16] [ INFO ] [OdontologoController:36] Se busco el odontologo con id 1
+[2022-07-1112:51:04] [ INFO ] [OdontologoController:50] Se modifico el odontologo con id: 1
+[2022-07-1112:51:05] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
+[2022-07-1112:51:26] [ INFO ] [TurnoController:25] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Sat Jul 23 07:51:00 COT 2022}
+[2022-07-1112:51:29] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1112:51:47] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1112:51:58] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Cannot construct instance of `com.dh.odontologia.model.Paciente` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.dh.odontologia.model.Paciente` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1')
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 13] (through reference chain: com.dh.odontologia.model.Turno["paciente"])
+[2022-07-1112:51:58] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1112:52:14] [ INFO ] [TurnoController:65] Se elimino el turno con id: 1
+[2022-07-1112:52:20] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
+[2022-07-1112:52:21] [ INFO ] [OdontologoController:66] El odontologo con id: 1 se elimino
+[2022-07-1112:52:23] [ INFO ] [PacienteController:93] Listando los pacientes
+[2022-07-1113:16:09] [ INFO ] [PacienteController:40] Se creo el paciente Paciente{id=null, nombre='Lorena', apellido='Escobar', dni='1016942020', fechaIngreso=Mon Jul 11 08:16:00 COT 2022, domicilio=Domicilio{id=1, calle='45', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='cundi'}, turnos=[]}
+[2022-07-1113:16:34] [ INFO ] [PacienteController:40] Se creo el paciente Paciente{id=null, nombre='Sebastian', apellido='Aragon', dni='1111', fechaIngreso=Tue Jul 12 08:16:00 COT 2022, domicilio=Domicilio{id=2, calle='54', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='costazul'}, turnos=[]}
+[2022-07-1113:16:37] [ INFO ] [PacienteController:93] Listando los pacientes
+[2022-07-1113:16:58] [ INFO ] [PacienteController:53] Se busco a el paciente con id: 2
+[2022-07-1113:17:09] [ INFO ] [PacienteController:68] Se modifico el paciente con id: 2
+[2022-07-1113:17:10] [ INFO ] [PacienteController:93] Listando los pacientes
+[2022-07-1113:17:24] [ INFO ] [OdontologoController:24] Se creo el odontologo: Odontologo{id=1, nombre='Rosana', apellido='Escobar', matricula=145785, turnos=[]}
+[2022-07-1113:17:29] [ INFO ] [OdontologoController:24] Se creo el odontologo: Odontologo{id=2, nombre='Gloria', apellido='Ruiz', matricula=45678, turnos=[]}
+[2022-07-1113:17:31] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
+[2022-07-1113:17:38] [ INFO ] [OdontologoController:36] Se busco el odontologo con id 2
+[2022-07-1113:17:45] [ INFO ] [OdontologoController:50] Se modifico el odontologo con id: 2
+[2022-07-1113:17:45] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
+[2022-07-1113:17:52] [ INFO ] [OdontologoController:66] El odontologo con id: 2 se elimino
+[2022-07-1113:18:13] [ INFO ] [TurnoController:25] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Tue Jul 12 11:00:00 COT 2022}
+[2022-07-1113:18:25] [ INFO ] [TurnoController:25] Se crea un turno: Turno{id=2, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Mon Jul 11 08:18:00 COT 2022}
+[2022-07-1113:18:27] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:18:38] [ INFO ] [OdontologoController:24] Se creo el odontologo: Odontologo{id=3, nombre='Lorena', apellido='Perez', matricula=12344, turnos=[]}
+[2022-07-1113:18:41] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:18:47] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 2
+[2022-07-1113:18:55] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Cannot construct instance of `com.dh.odontologia.model.Paciente` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.dh.odontologia.model.Paciente` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1')
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 13] (through reference chain: com.dh.odontologia.model.Turno["paciente"])
+[2022-07-1113:18:55] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:19:06] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1113:19:16] [ ERROR] [GlobalExceptionHandler:16] JSON parse error: Cannot construct instance of `com.dh.odontologia.model.Paciente` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1'); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `com.dh.odontologia.model.Paciente` (although at least one Creator exists): no String-argument constructor/factory method to deserialize from String value ('1')
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 13] (through reference chain: com.dh.odontologia.model.Turno["paciente"])
+[2022-07-1113:19:16] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:22:22] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:22:39] [ INFO ] [PacienteController:40] Se creo el paciente Paciente{id=null, nombre='Sebastian', apellido='Aragon', dni='1111', fechaIngreso=Thu Jul 07 08:22:00 COT 2022, domicilio=Domicilio{id=1, calle='54', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='ddd'}, turnos=[]}
+[2022-07-1113:22:48] [ INFO ] [OdontologoController:24] Se creo el odontologo: Odontologo{id=1, nombre='Lorena', apellido='Perez', matricula=145785, turnos=[]}
+[2022-07-1113:22:50] [ INFO ] [PacienteController:93] Listando los pacientes
+[2022-07-1113:22:53] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
+[2022-07-1113:23:19] [ INFO ] [TurnoController:25] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Tue Jul 12 08:00:00 COT 2022}
+[2022-07-1113:23:21] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:23:27] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1113:23:43] [ INFO ] [PacienteController:40] Se creo el paciente Paciente{id=null, nombre='Rosana', apellido='Escobar', dni='1111', fechaIngreso=Wed Jun 29 08:23:00 COT 2022, domicilio=Domicilio{id=2, calle='45', numero='120', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='ddd'}, turnos=[]}
+[2022-07-1113:23:51] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1113:23:52] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1113:24:07] [ ERROR] [GlobalExceptionHandler:16] The given id must not be null!; nested exception is java.lang.IllegalArgumentException: The given id must not be null!
+[2022-07-1113:24:07] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1117:21:24] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1117:22:24] [ INFO ] [PacienteController:40] Se creo el paciente Paciente{id=null, nombre='Isabella', apellido='Chica', dni='1016942020', fechaIngreso=Mon Jul 11 12:22:00 COT 2022, domicilio=Domicilio{id=1, calle='54', numero='103f', localidad='BOGOTA D.C., CUNDINAMARCA', provincia='ddd'}, turnos=[]}
+[2022-07-1117:22:28] [ INFO ] [PacienteController:93] Listando los pacientes
+[2022-07-1117:22:41] [ INFO ] [OdontologoController:24] Se creo el odontologo: Odontologo{id=1, nombre='Gloria', apellido='Ruiz', matricula=145785, turnos=[]}
+[2022-07-1117:23:09] [ INFO ] [TurnoController:25] Se crea un turno: Turno{id=1, paciente=Paciente{id=1, nombre='null', apellido='null', dni='null', fechaIngreso=null, domicilio=null, turnos=[]}, odontologo=Odontologo{id=1, nombre='null', apellido='null', matricula=null, turnos=[]}, fecha=Tue Jul 19 12:00:00 COT 2022}
+[2022-07-1117:23:29] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1117:24:33] [ INFO ] [OdontologoController:24] Se creo el odontologo: Odontologo{id=2, nombre='Rosana', apellido='Escobar', matricula=45678, turnos=[]}
+[2022-07-1117:24:38] [ INFO ] [OdontologoController:78] Se estan listando los odontologos
+[2022-07-1117:25:23] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1117:25:24] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1117:25:28] [ INFO ] [TurnoController:50] Se modifico el turno conel id:1
+[2022-07-1117:25:28] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1117:25:31] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1117:25:34] [ INFO ] [TurnoController:50] Se modifico el turno conel id:1
+[2022-07-1117:25:34] [ INFO ] [TurnoController:76] Listando los turnos
+[2022-07-1117:25:36] [ INFO ] [TurnoController:36] Se busco a el tueno con id: 1
+[2022-07-1117:28:21] [ INFO ] [TurnoController:76] Listando los turnos

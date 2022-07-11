@@ -1,8 +1,7 @@
 window.addEventListener('load', function () {
 
     (function(){
-      //con fetch invocamos a la API de estudiantes con el método GET
-      //nos devolverá un JSON con una colección de estudiantes
+      
       const url = '/turnos';
       const settings = {
         method: 'GET'
@@ -10,11 +9,9 @@ window.addEventListener('load', function () {
     fetch(url,settings)
     .then(response => response.json())
     .then(data => {
-         //recorremos la colección de estudiantes del JSON
+         
          for(turno of data){
-          //por cada estudiante armaremos una fila de la tabla
-          //cada fila tendrá un id que luego nos permitirá borrar la fila si eliminamos
-          //el estudiante
+          
 
           var table = document.getElementById("turnoTable");
           var turnoRow = table.insertRow();
@@ -22,18 +19,14 @@ window.addEventListener('load', function () {
           turnoRow.id = tr_id;
           console.log(turno)
 
-          //por cada estudiante creamos un boton delete que agregaremos en cada fila para poder eliminar la misma
-          //dicho boton invocara a la funcion de java script deleteByKey que se encargará
-          //de llamar a la API para eliminar al estudiante
+          
            let deleteButton = '<button' +
                                       ' id=' + '\"' + 'btn_delete_' + turno.id + '\"' +
                                       ' type="button" onclick="deleteBy('+turno.id+')" class="btn btn-danger btn_delete">' +
                                       '&times' +
                                       '</button>';
 
-           //por cada estudiante creamos un boton que muestra el id y que al hacerle clic invocará
-           //a la función de java script findBy que se encargará de buscar al estudiante que queremos
-           //modificar y mostrar los datos del mismo en un formulario.
+           
           let updateButton = '<button' +
                                       ' id=' + '\"' + 'btn_id_' + turno.id + '\"' +
                                       ' type="button" onclick="findBy('+turno.id+')" class="btn btn-info btn_id">' +
@@ -41,16 +34,13 @@ window.addEventListener('load', function () {
                                       '</button>';
 
 
-          //armamos cada columna de la fila
-          //como primer columna pondremos el boton modificar
-          //luego los datos del estudiante
-          //como ultima columna el boton eliminar
+          
          turnoRow.innerHTML = '<td>' + updateButton + '</td>' +
-                              '<td class=\"td_last_name\">' + turno.paciente.nombre.toUpperCase() + '</td>' +
-                              '<td class=\"td_last_name\">' + turno.paciente.apellido.toUpperCase() + '</td>' +
-                              '<td class=\"td_last_name\">' + turno.odontologo.nombre.toUpperCase() + '</td>' +
-                              '<td class=\"td_last_name\">' + turno.odontologo.apellido.toUpperCase() + '</td>' +
-                              '<td class=\"td_last_name\">' + turno.fecha + '</td>' +
+                              '<td class=\"td_first_name_paciente\">' + turno.paciente.nombre.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name_paciente\">' + turno.paciente.apellido.toUpperCase() + '</td>' +
+                              '<td class=\"td_first_name_odontologo\">' + turno.odontologo.nombre.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name_odontologo\">' + turno.odontologo.apellido.toUpperCase() + '</td>' +
+                              '<td class=\"td_fecha\">' + turno.fecha + '</td>' +
                               '<td>' + deleteButton + '</td>';
 
         };
